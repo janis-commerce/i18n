@@ -1,0 +1,39 @@
+{
+  "name": "@janiscommerce/i18n",
+  "version": "1.0.0",
+  "description": "Internazionalization",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "export TEST_ENV=true; mocha --exit -R nyan --recursive tests/",
+    "test-ci": "nyc --reporter=html --reporter=text mocha --recursive tests/",
+    "watch-test": "export TEST_ENV=true; mocha --exit -R nyan -w --recursive tests/",
+    "coverage": "nyc npm test",
+    "lint": "eslint lib/ tests/",
+    "build-types": "tsc lib/index.js --declaration --allowJs --emitDeclarationOnly --outDir types --skipLibCheck",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/janis-commerce/i18n.git"
+  },
+  "author": "Janis",
+  "license": "ISC",
+  "homepage": "https://github.com/janis-commerce/i18n.git#readme",
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.31.0",
+    "husky": "^8.0.3",
+    "mocha": "^10.8.2",
+    "nyc": "^17.1.0",
+    "typescript": "^5.7.3"
+  },
+  "files": [
+    "lib/",
+    "types/"
+  ],
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "accept-language": "^3.0.20"
+  }
+}
